@@ -1,7 +1,9 @@
 {
-    "name": "crell/*",
+    "name": "crell/unserialize-dump-benchmarks",
+    "description": "Just some benchmarks",
+    "license": "LGPL-3.0-or-later",
     "require": {
-        "php": "~8.0"
+        "php": "~8.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5",
@@ -11,13 +13,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Crell\\Foo\\": "src"
+            "Crell\\DumperBench\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Crell\\Foo\\": "tests",
-            "Crell\\Foo\\Benchmarks\\": "benchmarks"
+            "Crell\\DumperBench\\": "tests",
+            "Crell\\DumperBench\\Benchmarks\\": "benchmarks"
         }
     }
 }
