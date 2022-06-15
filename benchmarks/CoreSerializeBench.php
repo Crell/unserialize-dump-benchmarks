@@ -48,16 +48,19 @@ class CoreSerializeBench
     public function benchUnserialize(): void
     {
         $main = unserialize(file_get_contents('./serialized/serialized.txt'));
+        $a = $main->sub->i;
     }
 
     public function benchUnserializeClass(): void
     {
         $main = unserialize(file_get_contents('./serialized/serialized.txt'), ['allowed_classes' => [Main::class, Sub::class, Recurse::class]]);
+        $a = $main->sub->i;
     }
 
     public function benchVarExportRequire(): void
     {
         $main = require './serialized/var_dump.php';
+        $a = $main->sub->i;
     }
 
 }
