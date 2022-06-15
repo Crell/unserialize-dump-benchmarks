@@ -17,3 +17,6 @@ test: build
 
 phpstan: build
 	$(compose_command) vendor/bin/phpstan
+
+bench:
+	php setup-serialized.php && ./vendor/bin/phpbench run --report=overview
