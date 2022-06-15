@@ -26,8 +26,8 @@ trait Makers
 
     protected function makeRecurse(int $depth): Recurse
     {
-        $r = new Recurse(5);
-        for ($i = 0; $i < 5; ++$i) {
+        $r = new Recurse($this->counter++);
+        for ($i = 0; $i < $depth; ++$i) {
             $r = new Recurse($this->counter++, $r);
         }
         return $r;

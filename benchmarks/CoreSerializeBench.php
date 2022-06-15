@@ -33,7 +33,6 @@ class CoreSerializeBench
         $this->main = $this->makeMain(500, 500);
     }
 
-
     public function tearDown(): void {}
 
     public function benchSerialize(): void
@@ -45,5 +44,21 @@ class CoreSerializeBench
     {
         var_export($this->main, true);
     }
+
+    public function benchUnserialize(): void
+    {
+        $main = unserialize(file_get_contents('./serialized/serialized.txt'));
+    }
+
+    public function benchUnserializeClass(): void
+    {
+        $main = unserialize(file_get_contents('./serialized/serialized.txt'), ['allowed_classes' => [Main::class, Sub::class, Recurse::class]]);
+    }
+
+    public function benchVarExportRequire(): void
+    {
+        $main = require './serialized/var_dump.php';
+    }
+
 }
 

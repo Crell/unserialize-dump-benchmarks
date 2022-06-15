@@ -6,6 +6,8 @@ namespace Crell\DumperBench;
 
 class Main
 {
+    use Hydratable;
+
     public Sub $sub;
 
     /** @var Sub[] */
