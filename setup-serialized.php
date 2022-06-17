@@ -39,6 +39,9 @@ class Run
     }
 }
 
+$subItems = (int)getenv('SUB_ITEMS');
+$recursion = (int)getenv('RECURSION');
+
 $r = new Run();
-$r->makeSerialized(500, 500);
-$r->makeVarDump(500, 500);
+$r->makeSerialized($subItems, $recursion);
+$r->makeVarDump($subItems, $recursion);

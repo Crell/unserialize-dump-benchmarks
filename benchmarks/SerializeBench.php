@@ -22,7 +22,7 @@ use PhpBench\Benchmark\Metadata\Annotations\Warmup;
  * @AfterMethods({"tearDown"})
  * @OutputTimeUnit("milliseconds", precision=3)
  */
-class CoreSerializeBench
+class SerializeBench
 {
     use Makers;
 
@@ -30,7 +30,10 @@ class CoreSerializeBench
 
     public function setUp(): void
     {
-        $this->main = $this->makeMain(500, 500);
+        $subItems = (int)getenv('SUB_ITEMS');
+        $recursion = (int)getenv('RECURSION');
+
+        $this->main = $this->makeMain($subItems, $recursion);
     }
 
     public function tearDown(): void {}
