@@ -7,6 +7,7 @@ namespace Crell\DumperBench;
 class Recurse
 {
     use ConstructorHydratable;
+//    use Unserialize;
 
     public function __construct(
         public int $i,

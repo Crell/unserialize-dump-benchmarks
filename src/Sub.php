@@ -7,6 +7,7 @@ namespace Crell\DumperBench;
 class Sub
 {
     use ConstructorHydratable;
+//    use Unserialize;
 
     public function __construct(
         public readonly int $i,
